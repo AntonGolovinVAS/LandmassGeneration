@@ -3,6 +3,7 @@ using System.Collections;
 
 public static class Noise
 {
+
     public static float[,] generateNoiseMap(int _mapWidth, int _mapHeight, int _seed, float _scale, int _octaves, float _persistance, float _lacunarity, Vector2 _offSet)
     {
         float[,] noiseMap = new float[_mapWidth, _mapHeight];
