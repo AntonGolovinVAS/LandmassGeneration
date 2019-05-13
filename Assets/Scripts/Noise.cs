@@ -1,10 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public static class Noise
 {
-
-    public static float[,] generateNoiseMap(int _mapWidth, int _mapHeight, int _seed, float _scale, int _octaves, float _persistance, float _lacunarity, Vector2 _offSet)
+    /// <summary>
+    /// Генерация шума.
+    /// </summary>
+    /// <param name="_mapWidth">Ширина карты.</param>
+    /// <param name="_mapHeight">Высота карты.</param>
+    /// <param name="_seed"></param>
+    /// <param name="_scale">Размер.</param>
+    /// <param name="_octaves"></param>
+    /// <param name="_persistance">Как сильно детали влияют на общую массу.</param>
+    /// <param name="_lacunarity">Увеличивает кол-во маленьких деталей.</param>
+    /// <param name="_offSet">Сдвиг.</param>
+    /// <returns></returns>
+    public static float[,] generateNoiseMap(int _mapWidth, int _mapHeight,
+                                            int _seed, float _scale, int _octaves,
+                                            float _persistance, float _lacunarity, Vector2 _offSet)
     {
         float[,] noiseMap = new float[_mapWidth, _mapHeight];
 
@@ -71,6 +85,7 @@ public static class Noise
                 noiseMap[x, y] = Mathf.InverseLerp(minNoiseHeight, maxNoiseHeight, noiseMap[x, y]);
             }
         }
+
         return noiseMap;
     }
 }

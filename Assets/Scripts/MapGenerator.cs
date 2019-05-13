@@ -2,21 +2,24 @@
 using System.Collections;
 
 
-
+public enum DrawMode
+{
+    NoiseMap,
+    ColourMap,
+    Mesh
+}
 public class MapGenerator : MonoBehaviour
 {
-    public enum DrawMode
-    {
-        NoiseMap,
-        ColourMap,
-        Mesh
-    }
+   
 
     public DrawMode drawMode;
 
     public const int MAP_CHUNK_SIZE = 241;
     [Range(0, 6)]
     public int levelOfDetail;
+
+    [HideInInspector]
+    public Texture2D texture2d;
 
     public float noiseScale;
 
@@ -38,15 +41,18 @@ public class MapGenerator : MonoBehaviour
 
     [Tooltip("Управляет высотой меша.")]
     public float meshHeightMultiplier;
+
     public AnimationCurve meshHeightCurve;
 
     public bool autoUpdate;
 
-    public TerrainType[] regions; 
+    public TerrainType[] regions;
+
+
 
     public void GenerateMap()
     {
-        float[,] noiseMap = Noise.generateNoiseMap(MAP_CHUNK_SIZE, MAP_CHUNK_SIZE, seed, noiseScale, octaves, persistance, lacunarity, offSet);
+        float[,]  noiseMap = Noise.generateNoiseMap(MAP_CHUNK_SIZE, MAP_CHUNK_SIZE, seed, noiseScale, octaves, persistance, lacunarity, offSet);
        
         Color[] colourMap = new Color[MAP_CHUNK_SIZE * MAP_CHUNK_SIZE];
         for (int y = 0; y < MAP_CHUNK_SIZE; y++)
@@ -67,11 +73,13 @@ public class MapGenerator : MonoBehaviour
         MapDisplay display = FindObjectOfType<MapDisplay>();
         if (drawMode == DrawMode.NoiseMap)
         {
-            display.DrawTexture(TextureGenerator.TextureFromHeightMap(noiseMap));
+            texture2d = TextureGenerator.TextureFromHeightMap(noiseMap);
+            display.DrawTexture(texture2d);
         }
         else if (drawMode == DrawMode.ColourMap)
         {
-            display.DrawTexture(TextureGenerator.TextureFromColourMap(colourMap, MAP_CHUNK_SIZE, MAP_CHUNK_SIZE));
+            texture2d = TextureGenerator.TextureFromColourMap(colourMap, MAP_CHUNK_SIZE, MAP_CHUNK_SIZE);
+            display.DrawTexture(texture2d);
         }
         else if (drawMode == DrawMode.Mesh)
         {

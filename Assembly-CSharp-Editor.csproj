@@ -62,8 +62,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor\MapGeneratorEditor.cs" />
+    <Compile Include="Assets\Editor\Tests\MapDisplay_Test.cs" />
+    <Compile Include="Assets\Editor\Tests\MapGenerator_Test.cs" />
+    <Compile Include="Assets\Editor\Tests\MeshGenerator_Test.cs" />
+    <Compile Include="Assets\Editor\Tests\Noise_Test.cs" />
+    <Compile Include="Assets\Editor\Tests\TextureGenerator_Test.cs" />
+    <Compile Include="Assets\Scripts\Editor\GenerateSelect\GenerateHeightMapEditorWindow.cs" />
+    <Compile Include="Assets\Scripts\Editor\GenerateSelect\GenerateMapEditorWindow.cs" />
+    <Compile Include="Assets\Scripts\Editor\GenerateSelect\GenerateMeshMapEditorWidow.cs" />
     <Compile Include="Assets\Scripts\Editor\MainWindowMapGenerator.cs" />
-    <Compile Include="Assets\Scripts\Editor\WindowMapGenerator.cs" />
+    <Compile Include="Assets\Scripts\Example\Example(MePlayer)\Editor\MePlayerEditor.cs" />
+    <Compile Include="Assets\Scripts\Example\Properties\autoRepaintOnSceneChange\Editor\AutoRepaintOnSceneChange.cs" />
+    <Compile Include="Assets\Scripts\Example\Properties\maximized\Editor\maximized.cs" />
+    <Compile Include="Assets\Scripts\Example\Properties\position\Editor\Position.cs" />
+    <Compile Include="Assets\Scripts\Example\Properties\WantsMouseEnterLeaveWindow\Editor\WantsMouseEnterLeaveWindow.cs" />
+    <Compile Include="Assets\Scripts\Example\Properties\wantsMouseMove\Editor\WantsMouseMove.cs" />
+    <Compile Include="Assets\Scripts\Example\Public Methods\BeginWindows\Editor\BeginWindows.cs" />
+    <Compile Include="Assets\Scripts\Example\Public Methods\Close\Editor\Close.cs" />
+    <Compile Include="Assets\Scripts\Example\Public Methods\EndWindows\Editor\EndWindows.cs" />
+    <Compile Include="Assets\Scripts\Example\Public Methods\Focus\Editor\Focus1.cs" />
+    <Compile Include="Assets\Scripts\Example\Public Methods\Focus\Editor\Focus2.cs" />
+    <Compile Include="Assets\Scripts\Example\Public Methods\RandomizeInSelection\Editor\RandomizeInSelection.cs" />
+    <Compile Include="Assets\Scripts\Example\Public Methods\RemoveNotification\Editor\RemoveNotification.cs" />
+    <Compile Include="Assets\Scripts\Example\Public Methods\Repaint\Editor\Repaint.cs" />
+    <Compile Include="Assets\Scripts\Example\Public Methods\SendEvent\Editor\receiveEvent.cs" />
+    <Compile Include="Assets\Scripts\Example\Public Methods\SendEvent\Editor\SendEvent.cs" />
+    <Compile Include="Assets\Scripts\Example\Public Methods\ShowPopup\Editor\ShowPopup.cs" />
+    <Compile Include="Assets\Scripts\Example\Public Methods\ShowUtility\Editor\ShowUtility.cs" />
+    <Compile Include="Assets\Scripts\Example\Public Methods\UpDate\Editor\Update.cs" />
+    <Compile Include="Assets\Scripts\Example\Static Properties\Example(focusedWindow)\Editor\FocusedWindow.cs" />
+    <Compile Include="Assets\Scripts\Example\Static Properties\Example(mouseOverWindow)\Editor\mouseOverWindow.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Work/UnityProjects/LandmassGeneration/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

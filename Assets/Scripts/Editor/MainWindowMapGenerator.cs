@@ -5,36 +5,42 @@ using UnityEngine;
 
 public class MainWindowMapGenerator : EditorWindow
 {
-    TerrainType[] regions;
+
+    MapGenerator mapGenerator;
+
 
     private void Awake()
     {
-        regions = FindObjectOfType<MapGenerator>().regions;
+        mapGenerator = FindObjectOfType<MapGenerator>();
     }
 
 
     [MenuItem("MapGenerator/ OpenMapGenerator")]
     public static void ShowWindow()
-    {
-        GetWindow<MainWindowMapGenerator>("Welcome to map generator");
+    { 
+        GetWindowWithRect(typeof(MainWindowMapGenerator), new Rect(1000, 200, 300, 380), false, "Меню");
     }
 
     public void OnGUI()
     {
-        
-        if (GUILayout.Button("Open Map Generator"))
+        if (GUILayout.Button("Generate height map"))
         {
-            GetWindow<WindowMapGenerator>("MapGenerator");
-            
+            GetWindowWithRect(typeof(GenerateHeightMapEditorWindow), new Rect(1000, 200, 600, 600), false, "Генерация карты высот");
         }
-        
 
-    }
-    void OpenColorRegions()
-    {
-        for (int i = 0; i < regions.Length; i++)
+        if (GUILayout.Button("Generate map"))
         {
-            regions[i].colour = EditorGUILayout.ColorField(regions[i].name, regions[i].colour);
+            GetWindowWithRect(typeof(GenerateMapEditorWindow), new Rect(1000, 200, 600, 600), false, "Генерация 2D карты");
+        }
+
+        if (GUILayout.Button("Generate mesh map"))
+        {
+            GetWindowWithRect(typeof(GenerateMeshMapEditorWidow), new Rect(1000, 200, 600, 600), false, "Генерация меша карты");
+        }
+        GUILayout.Space(300);
+        if (GUILayout.Button("Close"))
+        {
+            this.Close();
         }
     }
 }

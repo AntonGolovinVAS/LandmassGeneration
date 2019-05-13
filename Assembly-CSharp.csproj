@@ -62,10 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\EndlessTerrain.cs" />
+    <Compile Include="Assets\Scripts\Example\Example(MePlayer)\MePlayer.cs" />
     <Compile Include="Assets\Scripts\MapDisplay.cs" />
     <Compile Include="Assets\Scripts\MapGenerator.cs" />
     <Compile Include="Assets\Scripts\MeshGenerator.cs" />
     <Compile Include="Assets\Scripts\Noise.cs" />
+    <Compile Include="Assets\Scripts\SaveTexture2D.cs" />
     <Compile Include="Assets\Scripts\TextureGenerator.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Work/UnityProjects/LandmassGeneration/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
